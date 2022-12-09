@@ -93,6 +93,10 @@ div.currencies > div {
     border-collapse: collapse;
 }
 
+.amount {
+    width: 259px;
+    border: 1px solid transparent;
+}
 .amount>#amount {
     font-weight: 700;
     font-size: 36px;
@@ -136,4 +140,13 @@ input {
 #error {
     margin-left: 300px;
     margin-top: 70px;
+}
+div.amount {
+    box-sizing: border-box;
+}
+div.amount:focus-within{
+    border: 1px solid black;
+}
+p#amount:focus{
+    outline: none;
 }
