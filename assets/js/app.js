@@ -18,6 +18,10 @@ document.querySelector('div.target>div.amount>p#amount').addEventListener('input
     dir = 'l'
     updateValues()})
 async function updateValues(){
+    if (!navigator.onLine){
+        document.querySelector('#error').textContent = 'İnternet bağlantısında problem var.'
+        return
+    }
     let base = document.querySelector(`div.source>div.currencies>div.active`).textContent
     let target = document.querySelector(`div.target>div.currencies>div.active`).textContent
     let rate

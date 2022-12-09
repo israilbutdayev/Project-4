@@ -73,6 +73,7 @@ div.main>div>div:nth-child(1){
 .source {
     max-width: 259px;
 }
+
 div.currencies {
     display: flex;
     margin-top: 8px;
@@ -130,4 +131,9 @@ input {
     border: 0;
     font-weight: 700;
     font-size: 36px;
+}
+
+#error {
+    margin-left: 300px;
+    margin-top: 70px;
 }
