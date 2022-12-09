@@ -70,7 +70,9 @@ div.main {
 div.main>div>div:nth-child(1){
     font-size: 12px;
 }
-
+.source {
+    max-width: 259px;
+}
 div.currencies {
     display: flex;
     margin-top: 8px;

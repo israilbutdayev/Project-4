@@ -11,10 +11,10 @@ async function clickHandler(e){
     e.target.classList.add('active')
     updateValues()
 }
-document.querySelector('div.source>div.amount>p#amount>input').addEventListener('input',(e)=>{
+document.querySelector('div.source>div.amount>p#amount').addEventListener('input',(e)=>{
     dir = 'r'
     updateValues()})
-document.querySelector('div.target>div.amount>p#amount>input').addEventListener('input',(e)=>{
+document.querySelector('div.target>div.amount>p#amount').addEventListener('input',(e)=>{
     dir = 'l'
     updateValues()})
 async function updateValues(){
@@ -32,9 +32,9 @@ async function updateValues(){
     document.querySelector("div.source #rate").textContent = `1 ${base} = ${rate} ${target}`
     document.querySelector("div.target #rate").textContent = `1 ${target} = ${revRate} ${base}`
     if (dir==='r'){
-        document.querySelector("div.target .amount>p#amount>input").value = Math.round(rate * Number(document.querySelector("div.source #amount input")?.value?.replace(/,/g,'.').match(/[\d\.]/g)?.join('')||0)*10000)/10000
+        document.querySelector("div.target .amount>p#amount").textContent = Math.round(rate * Number(document.querySelector("div.source #amount")?.textContent?.replace(/,/g,'.').match(/[\d\.]/g)?.join('')||0)*10000)/10000
     } else {
-        document.querySelector("div.source .amount>p#amount>input").value = Math.round(revRate * Number(document.querySelector("div.target #amount input")?.value?.replace(/,/g,'.').match(/[\d\.]/g)?.join('')||0)*10000)/10000
+        document.querySelector("div.source .amount>p#amount").textContent = Math.round(revRate * Number(document.querySelector("div.target #amount")?.textContent?.replace(/,/g,'.').match(/[\d\.]/g)?.join('')||0)*10000)/10000
     }
 }
 
