@@ -65,7 +65,7 @@ div.main {
     display: flex;
     margin-top: 30px;
     margin-left: 253px;
-    column-gap: 204px;
+    column-gap: 163px;
 }
 div.main>div>div:nth-child(1){
     font-size: 12px;
@@ -99,14 +99,16 @@ div.currencies > div {
 }
 
 .amount > p:nth-child(1){
-    line-height: 32px;
     margin-bottom: 0px;
+    height: 45px;
+    padding-top:0px;
+    margin-top:31px;
 }
 
 .amount > p:nth-child(2){
     margin-left: 16px;
     font-size: 12px;
-    margin-top: 28px;
+    margin-top: 21px;
 }
 
 div.currencies > div:first-child{
@@ -118,4 +120,12 @@ div.currencies > div:last-child{
 div.currencies > div.active {
     color: white;
     background-color: #833AE0;
+}
+
+input {
+    height: 100%;
+    width: 200px;
+    border: 0;
+    font-weight: 700;
+    font-size: 36px;
 }
