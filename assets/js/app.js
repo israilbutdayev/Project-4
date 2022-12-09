@@ -22,6 +22,7 @@ async function updateValues(){
         document.querySelector('#error').textContent = 'İnternet bağlantısında problem var.'
         return
     }
+    document.querySelector('#error').textContent = ''
     let base = document.querySelector(`div.source>div.currencies>div.active`).textContent
     let target = document.querySelector(`div.target>div.currencies>div.active`).textContent
     let rate
