@@ -25,15 +25,8 @@ async function updateValues(){
     document.querySelector('#error').textContent = ''
     let base = document.querySelector(`div.source>div.currencies>div.active`).textContent
     let target = document.querySelector(`div.target>div.currencies>div.active`).textContent
-    let rate
-    let revRate
-    if (base===target){
-        rate = 1
-        revRate = 1
-    } else {
-        rate = await getRates(base, target)
-        revRate = await getRates(target, base)
-    }
+    let rate = await getRates(base, target)
+    let revRate = await getRates(target, base)
     document.querySelector("div.source #rate").textContent = `1 ${base} = ${rate} ${target}`
     document.querySelector("div.target #rate").textContent = `1 ${target} = ${revRate} ${base}`
     if (dir==='r'){
@@ -44,6 +37,9 @@ async function updateValues(){
 }
 
 async function getRates(base,target){
+    if (base===target){
+        return 1
+    }
     let response = await fetch(`https://api.exchangerate.host/latest?base=${base}&symbols=${target}`).then(resp=>resp.json()).catch(err=>{console.log(err)});
     let rate = response?.rates?.[target]
     return rate
